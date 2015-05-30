@@ -737,7 +737,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_30620a1311fcd329dd69e1c2f939bb6527556102add2545c4e95c616a8878a1e');
+        $instance->setNamespace('sf2orm_default_75bdad27f7ed0b1c041e65229e13fab24d9e39d23e92f3ed3a83f1e82ab3f5e2');
 
         return $instance;
     }
@@ -754,7 +754,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_30620a1311fcd329dd69e1c2f939bb6527556102add2545c4e95c616a8878a1e');
+        $instance->setNamespace('sf2orm_default_75bdad27f7ed0b1c041e65229e13fab24d9e39d23e92f3ed3a83f1e82ab3f5e2');
 
         return $instance;
     }
@@ -771,7 +771,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_30620a1311fcd329dd69e1c2f939bb6527556102add2545c4e95c616a8878a1e');
+        $instance->setNamespace('sf2orm_default_75bdad27f7ed0b1c041e65229e13fab24d9e39d23e92f3ed3a83f1e82ab3f5e2');
 
         return $instance;
     }
@@ -4188,8 +4188,8 @@ class appDevDebugProjectContainer extends Container
             'assetic.variables' => array(
 
             ),
-            'assetic.java.bin' => 'C:\\Windows\\system32\\java.EXE',
-            'assetic.node.bin' => 'C:\\Program Files\\nodejs\\\\node.EXE',
+            'assetic.java.bin' => '/usr/bin/java',
+            'assetic.node.bin' => '/usr/bin/node',
             'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',

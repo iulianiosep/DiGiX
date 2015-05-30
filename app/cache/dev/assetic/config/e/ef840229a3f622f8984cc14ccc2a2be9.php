@@ -43,4 +43,24 @@ return array (
       ),
     ),
   ),
+  '325c243' => 
+  array (
+    0 => 
+    array (
+      0 => 'bundles/digix/images/',
+    ),
+    1 => 
+    array (
+    ),
+    2 => 
+    array (
+      'output' => '_controller/images/325c243',
+      'name' => '325c243',
+      'debug' => NULL,
+      'combine' => NULL,
+      'vars' => 
+      array (
+      ),
+    ),
+  ),
 );
