@@ -1,0 +1,96 @@
+{% extends '::base.html.twig' %}
+{% block title %}
+    HomePage
+    {{ parent() }}
+{% endblock %}
+{% block body %}
+        <div id="openModal" class="modalDialog">
+        <div>
+          <a href="#close" title="Close" class="close">X</a>
+          <form method="post" action="{{path('tag_controller') }}">
+            <h3>Import photos from Facebook</h3>
+            <p>Your photos</p>
+            {% for key,value in picturesArray %}
+              <div class="containercls">
+                <img src="{{ value }}" width='240' height='auto'/>
+                <input name="{{ 'photo'~key }}" type="text" class="checkbox"/> 
+              </div>
+            {% endfor %}
+
+            <p>Your videos</p>
+            {% for key,value in videosArray %}
+              <div class="containercls">
+                <video width='240' height='auto' controls>
+                  <source src="{{ value }}">
+                </video>
+                <input name="{{ 'video'~key }}" type="text" class="checkbox"/> 
+              </div>
+            {% endfor %}
+
+            <input type="submit" class="inputsubmit" value="Tag them!"/>
+          </form>
+        </div>
+      </div>
+      
+
+         <div class="container">
+
+        <div class="row row-offcanvas row-offcanvas-right">
+
+          <div class="col-xs-12 col-sm-9">
+            <p class="pull-right visible-xs">
+              <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Sidebar</button>
+            </p>
+
+           
+
+           <!--{% for item in picturesArray %}
+              <div class="jumbotron">
+                <p class="p-news">Paragraf1
+                  <img src="{{ item }}" width="300" height="auto"/>
+                </p>
+              </div>
+           {% endfor %}-->
+           <div class="jumbotron">
+            <p class="p-news">Welcome to DiGix! Use the upper buttons to import your photos! Have a tagging experience.
+            </p>
+          </div>
+    </p>
+
+           
+     
+   </div><!--/.col-xs-12.col-sm-9-->
+
+            {% block sidebar %}
+                <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+                    {% include 'DigixBundle:Sidebar:sidebarpage.html.twig' %}
+                </div>
+
+            {% endblock %}
+
+        </div><!--/row-->
+
+<hr>
+
+<footer>
+  <p>&copy; DiGiX Team 2015</p>
+</footer>
+
+</div><!--/.container-->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+        {% block javascripts %}
+
+            <script src="{{ asset('bundles/digix/js/bootstrap.min.js') }}"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+            <script src="{{ asset('bundles/digix/js/ie10-viewport-bug-workaround.js') }}"></script>
+            <script src="{{ asset('bundles/digix/js/offcanvas.js') }}"></script>
+
+        {% endblock %}
+
+  {% endblock %}
+
