@@ -21,9 +21,11 @@ class LoginController extends Controller{
                     $session->start();
                     $session->set('firstName',$personalData[0]);
                     $session->set('lastName',$personalData[1]);
+                    $session->set('username',$user->getUsername());
                     $session->set('website',$user->getWebsite());
-                    $session->set('age',$user->getAge());
-                    $session->set('profilepic',$user->getUsername().'.jpg');
+                    $session->set('birthday',$user->getBirthday());
+                    $session->set('gender',$user->getGender());
+                    $session->set('city',$user->getCity());
                     
                     return $this->redirectToRoute('digix_wall');//digix_wall
           }

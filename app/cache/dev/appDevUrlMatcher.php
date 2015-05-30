@@ -418,9 +418,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'DigixBundle\\Controller\\ProfilePageController::displayProfileEditPageAction',  '_route' => 'edit_profile_page',);
         }
 
-        // contact_page
-        if ($pathinfo === '/contact') {
-            return array (  '_controller' => 'DigixBundle\\Controller\\ContactPageController::displayContactPageAction',  '_route' => 'contact_page',);
+        if (0 === strpos($pathinfo, '/contact')) {
+            // contact_page
+            if ($pathinfo === '/contact') {
+                return array (  '_controller' => 'DigixBundle\\Controller\\ContactPageController::displayContactPageAction',  '_route' => 'contact_page',);
+            }
+
+            // sendmail_page
+            if ($pathinfo === '/contact-send') {
+                return array (  '_controller' => 'DigixBundle\\Controller\\ContactPageController::sendmailAction',  '_route' => 'sendmail_page',);
+            }
+
         }
 
         // homepage

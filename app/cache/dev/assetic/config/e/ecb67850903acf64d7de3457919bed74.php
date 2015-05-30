@@ -63,44 +63,4 @@ return array (
       ),
     ),
   ),
-  '5db3db5' => 
-  array (
-    0 => 
-    array (
-      0 => 'bundles/digix/images/facebook-login.png',
-    ),
-    1 => 
-    array (
-    ),
-    2 => 
-    array (
-      'output' => '_controller/images/5db3db5.png',
-      'name' => '5db3db5',
-      'debug' => NULL,
-      'combine' => NULL,
-      'vars' => 
-      array (
-      ),
-    ),
-  ),
-  'e1de3aa' => 
-  array (
-    0 => 
-    array (
-      0 => 'bundles/digix/images/twitter-login.png',
-    ),
-    1 => 
-    array (
-    ),
-    2 => 
-    array (
-      'output' => '_controller/images/e1de3aa.png',
-      'name' => 'e1de3aa',
-      'debug' => NULL,
-      'combine' => NULL,
-      'vars' => 
-      array (
-      ),
-    ),
-  ),
 );

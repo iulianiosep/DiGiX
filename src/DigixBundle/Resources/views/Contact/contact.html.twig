@@ -62,11 +62,11 @@
 
 
        <div id="edit-content">
-        <form class="form-inline" role="form">
+        <form method="post" action="{{path('sendmail_page')  }}" class="form-inline" role="form">
           <div class="form-group">
            <label for="subject">Subject</label>
              <br>
-            <input type="text" class="form-control" id="contact-subject">
+            <input type="text" name="subject" class="form-control" id="contact-subject"/>
              
           </div>
           <br>
@@ -88,7 +88,7 @@
 
 
           <br></br>
-          <button type="submit" class="btn btn-default" id="edit-button">Send</button>
+          <input type="submit" class="btn btn-default" value="Send" id="edit-button"/>
         </form>
       </div>
 

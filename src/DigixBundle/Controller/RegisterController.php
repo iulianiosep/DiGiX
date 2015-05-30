@@ -14,18 +14,18 @@ class RegisterController extends Controller{
           $firstName=$request->request->get('fname');
           $lastName=$request->request->get('lname');
           $username=$firstName.".".$lastName;
-          $email=$request->request->get('email');
           $password=$request->request->get('password');
           $website=$request->request->get('website');
-          $age=$request->request->get('age');
-          $occupation=$request->request->get('occupation');
+          $birthday=$request->request->get('birthday');
+          $city=$request->request->get('city');
+          $gender=$request->request->get('gender');
 
           $user->setPassword($password);
           $user->setUsername($username);
-          $user->setEmail($email);
           $user->setWebsite($website);
-          $user->setAge($age);
-          $user->setOccupation($occupation);
+          $user->setBirthday($birthday);
+          $user->setCity($city);
+          $user->setGender($gender);
 
           $em = $this->getDoctrine()->getManager();
 

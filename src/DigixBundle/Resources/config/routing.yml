@@ -69,3 +69,7 @@ edit_profile_page:
 contact_page:
     path:     /contact
     defaults: { _controller: DigixBundle:ContactPage:displayContactPage }
+
+sendmail_page: 
+    path: /contact-send 
+    defaults: { _controller: DigixBundle:ContactPage:sendmail }

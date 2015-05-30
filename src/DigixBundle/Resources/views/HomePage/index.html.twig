@@ -100,28 +100,15 @@
       
           <p class="float">
           <br>
-            <label for="login"><i class="fa fa-user"></i> Username</label>
-            <input type="text" name="login" placeholder="Username or email">
+            <label for="login"><i class="fa fa-user"></i>Username</label>
+            <input type="text" name="login" placeholder="Username">
           </p>
           <p class="float">
-            <label for="password"><i class="fa fa-key"></i> Password</label>
+            <label for="password"><i class="fa fa-key"></i>Password</label>
             <input type="password" name="password" placeholder="Password" class="showpassword">
           </p>
           <p class="clearfix">   
             <input class="buton-login" type="submit" name="submit" value="Log in">
-            <br></br>
-            <!--<a href="#"><img src="img/facebook-login.png"/></a>-->
-            <!--<a href="#"><img src="img/twitter-login.png"/></a>-->
-            <a href="{{path('facebook_login_controller')}}">
-              {% image 'bundles/digix/images/facebook-login.png' %}
-                <img src="{{ asset('bundles/digix/images/facebook-login.png') }}"/>
-              {% endimage %}
-            </a>
-            <a href="{{path('google_login_controller')}}">
-              {% image 'bundles/digix/images/twitter-login.png' %}
-                <img src="{{ asset('bundles/digix/images/google-login.png') }}"/>
-              {% endimage %}
-            </a>
           </p>
         </form>​​
       </section>
@@ -133,32 +120,31 @@
       
           <p class="float">
           <br>
-            <label for="fname"><i class="fa fa-user"></i> First Name</label>
+            <label for="fname"><i class="fa fa-user"></i>First Name</label>
             <input type="text" name="fname" placeholder="First Name">
           </p>
           <p class="float">
-            <label for="lname"><i class="fa fa-user"></i> Last Name</label>
+            <label for="lname"><i class="fa fa-user"></i>Last Name</label>
             <input type="text" name="lname" placeholder="Last Name" class="showpassword">
-          </p>
-          <p class="float">
-            <label for="e-mail"><i class="fa fa-envelope"></i> E-mail</label>
-            <input type="text" name="email" placeholder="E-mail" class="showpassword">
           </p>
           <p class="float">
             <label for="website"><i class="fa fa-user"></i>Website</label>
             <input type="url" name="website" placeholder="Website" class="showpassword">
           </p>
           <p class="float">
-            <label for="age"><i class="fa fa-user"></i>Age</label>
-            <input type="number" name="age" placeholder="0" class="showpassword">
+            <label for="age"><i class="fa fa-user"></i>Birthday</label>
+            <input type="text" name="birthday" placeholder="0" class="showpassword">
           </p>
           <p class="float">
-            <label for="occupation"><i class="fa fa-user"></i>Occupation</label>
-            <input type="text" name="occupation" placeholder="Occupation" class="showpassword">
+            <label for="city"><i class="fa fa-user"></i>City</label>
+            <input type="text" name="city" placeholder="City" class="showpassword">
           </p>
-          
           <p class="float">
-            <label for="password"><i class="fa fa-key"></i> Password</label>
+            <label for="gender"><i class="fa fa-user"></i>Gender</label>
+            <input type="text" name="gender" placeholder="Gender" class="showpassword">
+          </p>
+          <p class="float">
+            <label for="password"><i class="fa fa-key"></i>Password</label>
             <input type="password" name="password" placeholder="Password" class="showpassword">
           </p>
           <p class="clearfix">   

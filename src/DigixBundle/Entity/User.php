@@ -47,22 +47,21 @@ class User
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
-    private $occupation;
-
-    /**
-     * @var string
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank()
-     * @Assert\Email()
-     */
-    private $email;
+    private $birthday;
 
     /**
      * @var integer
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
-    private $age;
+    private $city;
+
+    /**
+     * @var integer
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    private $gender;
 
 
     /**
@@ -155,71 +154,72 @@ class User
     }
 
     /**
-     * Set occupation
+     * Set birthday
      *
-     * @param string $occupation
+     * @param string $birthday
      * @return User
      */
-    public function setOccupation($occupation)
+    public function setBirthday($birthday)
     {
-        $this->occupation = $occupation;
+        $this->birthday = $birthday;
 
         return $this;
     }
 
     /**
-     * Get occupation
+     * Get birthday
      *
      * @return string 
      */
-    public function getOccupation()
+    public function getBirthday()
     {
-        return $this->occupation;
+        return $this->birthday;
     }
 
     /**
-     * Set email
+     * Set gender
      *
-     * @param string $email
+     * @param string $gender
      * @return User
      */
-    public function setEmail($email)
+    public function setGender($gender)
     {
-        $this->email = $email;
+        $this->gender = $gender;
 
         return $this;
     }
 
     /**
-     * Get email
+     * Get gender
      *
      * @return string 
      */
-    public function getEmail()
+    public function getGender()
     {
-        return $this->email;
+        return $this->gender;
     }
 
+
     /**
-     * Set age
+     * Set city
      *
-     * @param integer $age
+     * @param string $city
      * @return User
      */
-    public function setAge($age)
+    public function setCity($city)
     {
-        $this->age = $age;
+        $this->city = $city;
 
         return $this;
     }
 
     /**
-     * Get age
+     * Get city
      *
-     * @return integer 
+     * @return string 
      */
-    public function getAge()
+    public function getCity()
     {
-        return $this->age;
+        return $this->city;
     }
 }

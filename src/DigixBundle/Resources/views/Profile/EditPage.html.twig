@@ -6,40 +6,6 @@
 
   {%block body%}
 
-<nav class="navbar navbar-fixed-top navbar-inverse">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">DiGix</a>
-          </div>
-          <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-            <li><a href="{{path('digix_wall')}}">Tag them</a></li>
-              <li class=""><a href="{{path('search_controller')}}">Search them</a></li>
-              <li><a href="{{path('box_page')}}">My Box</a></li>
-              <li><a href="{{path('about_page')}}">About</a></li>
-              <li><a href="{{path('contact_page')}}">Support</a></li>
-            </ul>
-
-            <div class="social">
-              <a class="facebook-hover social-slide" href="#openModal"></a>
-              <a class="twitter-hover social-slide"  href="#"></a>
-              <a class="google-hover social-slide"  href="#"></a>
-              <a class="instagram-hover social-slide"  href="#"></a>
-              <a class="tumblr-hover social-slide"  href="#"></a>
-            </div>
-
-
-
-          </div><!-- /.nav-collapse -->
-        </div><!-- /.container -->
-
-      </nav><!-- /.navbar -->
   
 
   <div class="container">
@@ -65,25 +31,25 @@
         <form class="form-inline" role="form">
           <div class="form-group">
            <label for="birthday">Birthday</label>
-            <input type="text" class="form-control" id="edit-birthday" placeholder="Birth date...">
+            <input type="text" class="form-control" id="edit-birthday" value={{birthday}}>
              
           </div>
           <br></br>
           <div class="form-group">
              <label for="town">City</label>
-            <input type="text" class="form-control" id="edit-city" placeholder="City...">
+            <input type="text" class="form-control" id="edit-city" value={{city}}>
            
           </div>
           <br></br>
           <div class="form-group">
            <label for="birthday">Gender</label>
-            <input type="text" class="form-control" id="edit-gender" placeholder="Gender...">
+            <input type="text" class="form-control" id="edit-gender" value={{gender}}>
              
           </div>
           <br></br>
           <div class="form-group">
             <label for="birthday">Website</label>
-            <input type="text" class="form-control" id="edit-website" placeholder="Website...">
+            <input type="text" class="form-control" id="edit-website" value={{website}}>
             
           </div>
  <br></br>
