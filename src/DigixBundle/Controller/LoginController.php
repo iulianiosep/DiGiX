@@ -27,7 +27,8 @@ class LoginController extends Controller{
                     $session->set('gender',$user->getGender());
                     $session->set('city',$user->getCity());
                     $session->set('userId',$user->getId());
-
+                    $session->set('photos',array());
+                    
                     return $this->redirectToRoute('digix_wall');
           }
           else

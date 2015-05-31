@@ -9,6 +9,7 @@ use Facebook\FacebookRequestException;
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use DigixBundle\Entity\TagDB;
 
 require 'LoginCredentials.php';
 
@@ -43,22 +44,63 @@ class FacebookController extends Controller{
             $response = $request->execute();
             $videosResponse=$response->getGraphObject();
 
-            //var_dump($photosResponse);
+            $em = $this->getDoctrine()->getManager();
+            $result=$em->getRepository('DigixBundle\Entity\TagDB')->findAll();
+            foreach($result as $item)
+                $em->remove($item);
+            $em->flush();
+            
             $photosArray=$photosResponse->asArray();
             $photos=array();
             foreach($photosArray['data'] as $photoItem){
+
+                $tagList="";
+                foreach($photoItem->tags->data as $tagItem)
+                    $tagList.=$tagItem->name.",";
+                $tagList[strlen($tagList)-1]="";
+                
+                $createdTime=strtotime($photoItem->created_time);
+                $myTime=date("d m Y",$createdTime);
+
                 array_push($photos,$photoItem->images[0]->source);
+                
+                $tagItem=new TagDB();
+                    $tagItem->setUrl($photoItem->images[0]->source);
+                    $tagItem->setTagList($tagList);
+                    $tagItem->setType('photo');
+                    $tagItem->setUserId($this->getRequest()->getSession()->get('userId'));
+                    $tagItem->setCreatedTime($myTime);
+
+
+                $em->persist($tagItem);
+                $em->flush();
             }
 
             $videosArray=$videosResponse->asArray();
             $videos=array();
             foreach($videosArray['data'] as $videoItem){
+                $tagList="";
+                foreach($videoItem->tags->data as $tagItem)
+                    $tagList.=$tagItem->name.",";
+                $tagList[strlen($tagList)-1]="";
+
                 array_push($videos,$videoItem->source);
+
+                $tagItem=new TagDB();
+                    $tagItem->setUrl($videoItem->source);
+                    $tagItem->setTagList($tagList);
+                    $tagItem->setType('video');
+                    $tagItem->setUserId($this->getRequest()->getSession()->get('userId'));
+                    $tagItem->setCreatedTime($myTime);
+
+
+                $em->persist($tagItem);
+                $em->flush();
             }
 
-            $this->getRequest()->getSession()->set('photos',$photos);
-            $this->getRequest()->getSession()->set('videos',$videos);
             
+            $this->getRequest()->getSession()->set('videos',$videos);
+            $this->getRequest()->getSession()->set('photos',$photos);
             return $this->redirectToRoute('edit_profile_page');
         }
         else{

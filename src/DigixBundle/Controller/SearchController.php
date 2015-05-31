@@ -62,6 +62,23 @@ class SearchController extends Controller{
         return $resultArray;
      }
 
+     public function getAll($option,$userId){
+         $em = $this->getDoctrine()->getManager();
+
+        $result=$em->getRepository('DigixBundle\Entity\TagDB')->createQueryBuilder('tag')
+            ->where("tag.type=:option AND tag.userId=:userId")
+            ->setParameter('option',$option)
+            ->setParameter('userId',$userId)
+            ->getQuery()
+            ->getResult();
+
+        $resultArray=array();
+        for($i=0;$i<count($result);$i++)
+                array_push($resultArray,$result[$i]->getUrl());
+
+        return $resultArray;
+     }
+
      public function displaySearchAction(Request $request){
         $session=$request->getSession();
 

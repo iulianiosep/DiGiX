@@ -41,6 +41,12 @@ class TagDB
      * @ORM\Column(type="string", length=255)
      */
     private $type;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
+    private $createdTime;
     /**
      * Get id
      *
@@ -141,5 +147,28 @@ class TagDB
     public function getUserId()
     {
         return $this->userId;
+    }
+
+         /**
+     * Set createdTime
+     *
+     * @param string $createdTime
+     * @return TagDB
+     */
+    public function setCreatedTime($createdTime)
+    {
+        $this->createdTime = $createdTime;
+
+        return $this;
+    }
+
+    /**
+     * Get createdTime
+     *
+     * @return string 
+     */
+    public function getCreatedTime()
+    {
+        return $this->createdTime;
     }
 }

@@ -11,7 +11,7 @@ class GooglePlusController extends Controller{
 
         $client_id = '805819329649-1ekup47o7h7qgp56l40njtqo7v3rlgq3.apps.googleusercontent.com';
         $client_secret = 'a7IREXaNu5Oujy-GSHpPSXMn';
-        $redirect_uri = 'http://localhost/proiect/digix/web/app_dev.php/wall';
+        $redirect_uri = 'http://localhost/proiect/digix/web/app_dev.php/edit-profile';
 
         $client = new \Google_Client();
         $client->setClientId($client_id);

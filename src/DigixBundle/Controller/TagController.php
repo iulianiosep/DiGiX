@@ -35,7 +35,8 @@ class TagController extends Controller{
                 $tagObject->setUrl($photos[(int)$i]);
                 $tagObject->setType('photo');
                 $tagObject->setUserId($userId);
-
+                $tagObject->setCreated('03 06 2015');
+                
                 $em->persist($tagObject);
                 
                 $em->flush();
@@ -51,7 +52,7 @@ class TagController extends Controller{
                 $tagObject->setTagList($tag);
                 $tagObject->setUrl($videos[(int)$i]);
                 $tagObject->setType('video');
-                
+
                 $em->persist($tagObject);
                 $em->flush();
                 $em->clear();
