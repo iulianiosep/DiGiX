@@ -21,8 +21,7 @@ class FacebookController extends Controller{
         $session->start();
 
         FacebookSession::setDefaultApplication($loginCredentials->facebookAppId, $loginCredentials->facebookAppSecret);
-
-        //$url=;'http://localhost'.$this->generateUrl('default_controller');        
+      
         $helper = new FacebookRedirectLoginHelper('http://localhost/digix/web/app_dev.php/facebook-login');
 
         try{
@@ -60,7 +59,7 @@ class FacebookController extends Controller{
             $this->getRequest()->getSession()->set('photos',$photos);
             $this->getRequest()->getSession()->set('videos',$videos);
             
-            return $this->redirectToRoute('digix_wall');
+            return $this->redirectToRoute('edit_profile_page');
         }
         else{
             //echo "<a href=".$helper->getLoginUrl().">.Login with fb</a><br>";

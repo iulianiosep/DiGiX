@@ -337,9 +337,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'DigixBundle\\Controller\\WallController::displayWallAction',  '_route' => 'digix_wall',);
         }
 
-        // digix_loginCheck
-        if ($pathinfo === '/logincheck') {
-            return array (  '_controller' => 'DigixBundle\\Controller\\LoginController::checkLoginAction',  '_route' => 'digix_loginCheck',);
+        if (0 === strpos($pathinfo, '/log')) {
+            // digix_loginCheck
+            if ($pathinfo === '/logincheck') {
+                return array (  '_controller' => 'DigixBundle\\Controller\\LoginController::checkLoginAction',  '_route' => 'digix_loginCheck',);
+            }
+
+            // digix_logout
+            if ($pathinfo === '/logout') {
+                return array (  '_controller' => 'DigixBundle\\Controller\\LoginController::logoutAction',  '_route' => 'digix_logout',);
+            }
+
         }
 
         // account_reg_check
@@ -413,9 +421,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'DigixBundle\\Controller\\MyBoxController::displayMyBoxAction',  '_route' => 'box_page',);
         }
 
-        // edit_profile_page
-        if ($pathinfo === '/edit-profile') {
-            return array (  '_controller' => 'DigixBundle\\Controller\\ProfilePageController::displayProfileEditPageAction',  '_route' => 'edit_profile_page',);
+        if (0 === strpos($pathinfo, '/edit-profile')) {
+            // edit_profile_page
+            if ($pathinfo === '/edit-profile') {
+                return array (  '_controller' => 'DigixBundle\\Controller\\ProfilePageController::displayProfileEditPageAction',  '_route' => 'edit_profile_page',);
+            }
+
+            // edit_profile_page_update
+            if ($pathinfo === '/edit-profile-update') {
+                return array (  '_controller' => 'DigixBundle\\Controller\\ProfilePageController::saveChangesAction',  '_route' => 'edit_profile_page_update',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/contact')) {

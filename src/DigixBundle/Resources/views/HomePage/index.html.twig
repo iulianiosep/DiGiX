@@ -37,19 +37,19 @@
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Support</a></li>
+              <li class="active"><a href="{{path('digix_homepage')}}">Home</a></li>
+              <li><a href="{{path('about_page')}}">About</a></li>
+              <li><a href="{{path('contact_page')}}">Support</a></li>
             </ul>
 
-            <div class="social">
-              <a class="facebook-hover social-slide" href="#openModal"></a>
+            <!--<div class="social">
+              <a class="facebook-hover social-slide" href="#"></a>
               <a class="twitter-hover social-slide"  href="#"></a>
               <a class="google-hover social-slide"  href="#"></a>
               <a class="instagram-hover social-slide"  href="#"></a>
               <a class="tumblr-hover social-slide"  href="#"></a>
 
-            </div>
+            </div>-->
 
 
 
@@ -57,20 +57,6 @@
         </div><!-- /.container -->
 
       </nav><!-- /.navbar -->
-
-      <div id="openModal" class="modalDialog">
-        <div>
-          <a href="#close" title="Close" class="close">X</a>
-          <h3>Import photos from Facebook</h3>
-          <p>Your photos</p>
-          {% for i in 0..7 %}
-            <div class="containercls">
-              <img src="http://www.autocraze.com.au/wp-content/uploads/2014/11/Chevrolet-Camaro-4.jpg" width='100' height='auto'/>
-              <input type="checkbox" class="checkbox"/> 
-            </div>
-          {% endfor %}
-        </div>
-      </div>
 
       <div class="container">
 
@@ -117,40 +103,41 @@
 <div id="sc2" class="tabcontent">
 <section class="main">
         <form action="{{path('account_reg_check') }}" method="post">
-      
+          
           <p class="float">
           <br>
-            <label for="fname"><i class="fa fa-user"></i>First Name</label>
-            <input type="text" name="fname" placeholder="First Name">
+            <label for="fname"><i class="fa fa-user"></i>First Name*</label>
+            <input type="text" name="fname" placeholder="First Name" required="true">
           </p>
           <p class="float">
-            <label for="lname"><i class="fa fa-user"></i>Last Name</label>
-            <input type="text" name="lname" placeholder="Last Name" class="showpassword">
+            <label for="lname"><i class="fa fa-user"></i>Last Name*</label>
+            <input type="text" name="lname" placeholder="Last Name" class="showpassword" required="true">
           </p>
           <p class="float">
-            <label for="website"><i class="fa fa-user"></i>Website</label>
-            <input type="url" name="website" placeholder="Website" class="showpassword">
+            <label for="website"><i class="fa fa-user"></i>Website*</label>
+            <input type="url" name="website" placeholder="Website" class="showpassword" required="true">
           </p>
           <p class="float">
-            <label for="age"><i class="fa fa-user"></i>Birthday</label>
-            <input type="text" name="birthday" placeholder="0" class="showpassword">
+            <label for="age"><i class="fa fa-user"></i>Birthday*</label>
+            <input type="text" name="birthday" placeholder="0" class="showpassword" required="true">
           </p>
           <p class="float">
-            <label for="city"><i class="fa fa-user"></i>City</label>
-            <input type="text" name="city" placeholder="City" class="showpassword">
+            <label for="city"><i class="fa fa-user"></i>City*</label>
+            <input type="text" name="city" placeholder="City" class="showpassword" required="true">
           </p>
           <p class="float">
-            <label for="gender"><i class="fa fa-user"></i>Gender</label>
-            <input type="text" name="gender" placeholder="Gender" class="showpassword">
+            <label for="gender"><i class="fa fa-user"></i>Gender*</label>
+            <input type="text" name="gender" placeholder="Gender" class="showpassword" required="true">
           </p>
           <p class="float">
-            <label for="password"><i class="fa fa-key"></i>Password</label>
-            <input type="password" name="password" placeholder="Password" class="showpassword">
+            <label for="password"><i class="fa fa-key"></i>Password*</label>
+            <input type="password" name="password" placeholder="Password" class="showpassword" required="true">
           </p>
           <p class="clearfix">   
             <input class="buton-login" type="submit" name="submit" value="Register">
             <br></br>
           </p>
+          
         </form>​​
       </section>
 </div>

@@ -13,8 +13,12 @@ use Facebook\FacebookRedirectLoginHelper;
 
 class MyBoxController extends Controller{
 
-     public function displayMyBoxAction(){
+     public function displayMyBoxAction(Request $request){
+        $session=$request->getSession();
 
+        if($session->get('username')===null)
+            return $this->redirectToRoute('digix_homepage');
+        
         $videosArray=array();
         $picturesArray=array();
 

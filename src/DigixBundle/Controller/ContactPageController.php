@@ -8,11 +8,17 @@ use \Swift_SmtpTransport,\Swift_Mailer,\Swift_Message;
 
 class ContactPageController extends Controller{
 
-     public function displayContactPageAction(){
+     public function displayContactPageAction(Request $request){
+     	$session=$request->getSession();
+     	if($session->get('username')===null)
+     		return $this->redirectToRoute('digix_homepage');
         return $this->render('DigixBundle:Contact:contact.html.twig');
      }
 
      public function sendmailAction(Request $request){
+     	$session=$request->getSession();
+     	if($session->get('username')===null)
+     		return $this->redirectToRoute('digix_homepage');
 
 		$pEmailGmail = 'digixdigix10@gmail.com';
 		$pPasswordGmail = 'parolameadigix';

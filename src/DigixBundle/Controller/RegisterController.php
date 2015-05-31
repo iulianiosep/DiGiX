@@ -5,6 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use DigixBundle\Entity\User;
+use Symfony\Component\HttpFoundation\FileBag;
 
 class RegisterController extends Controller{
 

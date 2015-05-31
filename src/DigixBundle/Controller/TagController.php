@@ -18,6 +18,8 @@ class TagController extends Controller{
      public function tagAction(Request $request){
      	$session=$this->getRequest()->getSession();
 
+        $userId=$session->get('userId');
+
         $photos=array();
         $photos=$session->get('photos');
         $videos=$session->get('videos');
@@ -32,8 +34,10 @@ class TagController extends Controller{
                 $tagObject->setTagList($tag);
                 $tagObject->setUrl($photos[(int)$i]);
                 $tagObject->setType('photo');
+                $tagObject->setUserId($userId);
 
                 $em->persist($tagObject);
+                
                 $em->flush();
                 $em->clear();
             }
@@ -53,10 +57,8 @@ class TagController extends Controller{
                 $em->clear();
             }
         }
+        
         return $this->redirectToRoute('digix_wall'); 
        
-     	
-     	return new Response();
-     	//return $this->redirectToRoute('digix_wall');
      }
 }

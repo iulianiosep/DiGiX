@@ -26,10 +26,18 @@ class LoginController extends Controller{
                     $session->set('birthday',$user->getBirthday());
                     $session->set('gender',$user->getGender());
                     $session->set('city',$user->getCity());
-                    
-                    return $this->redirectToRoute('digix_wall');//digix_wall
+                    $session->set('userId',$user->getId());
+
+                    return $this->redirectToRoute('digix_wall');
           }
           else
                return $this->redirectToRoute('digix_homepage');
+     }
+
+     public function logoutAction(Request $request){
+          $session=$request->getSession();
+          $session->clear();
+
+          return $this->redirectToRoute('digix_homepage');
      }
 }

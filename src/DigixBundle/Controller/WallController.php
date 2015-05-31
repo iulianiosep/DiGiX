@@ -15,6 +15,10 @@ class WallController extends Controller{
 
      public function displayWallAction(){
      	$session=$this->getRequest()->getSession();
+
+        if($session->get('username')===null)
+            return $this->redirectToRoute('digix_homepage');
+
      	$firstName=ucwords($session->get('firstName'));
      	$lastName=ucwords($session->get('lastName'));
      	
@@ -26,6 +30,10 @@ class WallController extends Controller{
         return $this->render('DigixBundle:Wall:wall.html.twig',array('name'=>$accountName,
         															 'website' => $session->get('sesiune'),
         															 'age' => $session->get('age'),
+                                                                     'city' => $session->get('city'),
+                                                                     'birthday' => $session->get('birthday'),
+                                                                     'gender' => $session->get('gender'),
+                                                                     'website' => $session->get('website'),
                                                                      'picturesArray' => $session->get('photos'),
                                                                      'videosArray' => $session->get('videos')));
      	//return $this->redirectToRoute('digix_wall');

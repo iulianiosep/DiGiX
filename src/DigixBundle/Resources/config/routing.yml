@@ -10,6 +10,10 @@ digix_loginCheck:
     path:     /logincheck
     defaults: { _controller: DigixBundle:Login:checkLogin }
 
+digix_logout:
+    path:     /logout
+    defaults: { _controller: DigixBundle:Login:logout }
+
 account_reg_check:
     path:     /registercheck
     defaults: { _controller: DigixBundle:Register:register }
@@ -65,6 +69,10 @@ box_page:
 edit_profile_page:
     path:     /edit-profile
     defaults: { _controller: DigixBundle:ProfilePage:displayProfileEditPage }
+
+edit_profile_page_update:
+    path:     /edit-profile-update
+    defaults: { _controller: DigixBundle:ProfilePage:saveChanges }
 
 contact_page:
     path:     /contact

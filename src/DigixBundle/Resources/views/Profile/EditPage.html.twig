@@ -21,38 +21,36 @@
       <div id="frontpage">
 
        <div id="edit-profile">         
-         {% image 'bundles/digix/images/'%}
-            <img src="{{ asset('bundles/digix/images/profile.png') }}" alt="not found"/>
-          {% endimage %}
+            <img src="{{ asset('bundles/digix/images/profile.png') }}"/>
        </div>
 
 
        <div id="edit-content">
-        <form class="form-inline" role="form">
+        <form action="{{path('edit_profile_page_update')}}" method="post" class="form-inline" role="form">
           <div class="form-group">
            <label for="birthday">Birthday</label>
-            <input type="text" class="form-control" id="edit-birthday" value={{birthday}}>
+            <input type="text" name="birthday" class="form-control" id="edit-birthday" value={{birthday}}>
              
           </div>
           <br></br>
           <div class="form-group">
              <label for="town">City</label>
-            <input type="text" class="form-control" id="edit-city" value={{city}}>
+            <input type="text" name="city" class="form-control" id="edit-city" value={{city}}>
            
           </div>
           <br></br>
           <div class="form-group">
            <label for="birthday">Gender</label>
-            <input type="text" class="form-control" id="edit-gender" value={{gender}}>
+            <input type="text" name="gender" class="form-control" id="edit-gender" value={{gender}}>
              
           </div>
           <br></br>
           <div class="form-group">
             <label for="birthday">Website</label>
-            <input type="text" class="form-control" id="edit-website" value={{website}}>
+            <input type="text" name="website" class="form-control" id="edit-website" value={{website}}>
             
           </div>
- <br></br>
+          <br></br>
           <div class="strike">
           <span>Social Network</span>
           </div>
@@ -62,42 +60,45 @@
          
           <div class="form-group">
             <label for="town">Facebook</label>
-            <input type="text" class="form-control" id="edit-facebook" placeholder="Facebook Link">
+            <a href="{{path('facebook_login_controller')}}" id="edit-facebook">
+                <img src="{{ asset('bundles/digix/images/facebook.png') }}"/>
+            </a>
             
           </div>
 
           <br></br>
           <div class="form-group">
             <label for="town">Twitter</label>
-            <input type="text" class="form-control" id="edit-twitter" placeholder="Twitter Link">
+            <a href="#" id="edit-twitter">
+                <img src="{{ asset('bundles/digix/images/twitter.png') }}"/>
+            </a>
             
           </div>
 
           <br></br>
           <div class="form-group">
             <label for="town">Google Plus</label>
-            <input type="text" class="form-control" id="edit-googlePlus" placeholder="Google Plus Link">
-            
+            <a href="#" id="edit-googlePlus">
+                  <img src="{{ asset('bundles/digix/images/google.png') }}"/>
+            </a>
           </div>
 
           <br></br>
           <div class="form-group">
             <label for="town">Instagram</label>
-            <input type="text" class="form-control" id="edit-instagram" placeholder="Instagram Link">
-            
+            <a href="#" id="edit-instagram">
+                    <img src="{{ asset('bundles/digix/images/instagram.png') }}"/>
+            </a>
           </div>
 
           <br></br>
           <div class="form-group">
             <label for="town">Tumblr</label>
-            <input type="text" class="form-control" id="edit-tumblr" placeholder="Tumblr Link">
+            <a href="#" id="edit-tumblr">
+                  <img src="{{ asset('bundles/digix/images/tumblr.png') }}"/>
+            </a>
             
           </div>
-
-
-
-
-
 
           <br></br>
           <button type="submit" class="btn btn-default" id="edit-button">Save</button>
@@ -110,7 +111,7 @@
      <hr>
 
      <footer>
-      <p>&copy; Company 2014</p>
+      <p>&copy; DiGix Team 2015</p>
     </footer>
 
   </div><!--/.container-->

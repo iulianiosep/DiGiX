@@ -5,6 +5,7 @@ namespace DigixBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * User
@@ -62,7 +63,6 @@ class User
      * @Assert\NotBlank()
      */
     private $gender;
-
 
     /**
      * Get id
@@ -222,4 +222,5 @@ class User
     {
         return $this->city;
     }
+
 }

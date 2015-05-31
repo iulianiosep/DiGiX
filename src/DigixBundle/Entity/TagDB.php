@@ -19,6 +19,12 @@ class TagDB
     private $id;
 
     /**
+     * @var integer
+     * @ORM\Column(type="integer")
+     */
+    private $userId;
+
+    /**
      * @var string
      * @ORM\Column(type="string", length=255)
      */
@@ -112,5 +118,28 @@ class TagDB
     public function getType()
     {
         return $this->type;
+    }
+
+     /**
+     * Set type
+     *
+     * @param integer $userId
+     * @return TagDB
+     */
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return integer 
+     */
+    public function getUserId()
+    {
+        return $this->userId;
     }
 }
