@@ -34,6 +34,7 @@ class WallController extends Controller{
                                                                      'birthday' => $session->get('birthday'),
                                                                      'gender' => $session->get('gender'),
                                                                      'website' => $session->get('website'),
+                                                                     'id' => $session->get('id'),
                                                                      'picturesArray' => $session->get('photos'),
                                                                      'videosArray' => $session->get('videos')));
      	//return $this->redirectToRoute('digix_wall');

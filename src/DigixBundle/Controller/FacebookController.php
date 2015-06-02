@@ -44,6 +44,10 @@ class FacebookController extends Controller{
             $response = $request->execute();
             $videosResponse=$response->getGraphObject();
 
+            $request = new FacebookRequest($session, 'GET', '/me');
+            $response = $request->execute();
+            $idResponse=$response->getGraphObject();
+
             $em = $this->getDoctrine()->getManager();
             $result=$em->getRepository('DigixBundle\Entity\TagDB')->findAll();
             foreach($result as $item)
@@ -98,7 +102,11 @@ class FacebookController extends Controller{
                 $em->flush();
             }
 
-            
+             $idArray=$idResponse->asArray();
+             $id=array();
+             $id = $idArray['id'];
+
+            $this->getRequest()->getSession()->set('id',$id);
             $this->getRequest()->getSession()->set('videos',$videos);
             $this->getRequest()->getSession()->set('photos',$photos);
             return $this->redirectToRoute('edit_profile_page');

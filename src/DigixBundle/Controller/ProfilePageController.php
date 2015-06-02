@@ -13,10 +13,21 @@ class ProfilePageController extends Controller{
      	if($session->get('username')===null)
      		return $this->redirectToRoute('digix_homepage');
 
-        return $this->render('DigixBundle:Profile:EditPage.html.twig',array('birthday' => $session->get('birthday'),
+
+        $firstName=ucwords($session->get('firstName'));
+        $lastName=ucwords($session->get('lastName'));
+        
+        $accountName=$firstName.' '.$lastName;
+
+
+
+        return $this->render('DigixBundle:Profile:EditPage.html.twig',array(
+                                                                            'name'=>$accountName,
+                                                                            'birthday' => $session->get('birthday'),
         																	'city' => $session->get('city'),
         																	'gender' => $session->get('gender'),
-        																	'website' => $session->get('website')));
+        																	'website' => $session->get('website'),
+                                                                            'id' => $session->get('id'),));
     }
 
     public function saveChangesAction(Request $request){
