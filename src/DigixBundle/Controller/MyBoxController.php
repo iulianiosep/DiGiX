@@ -44,4 +44,8 @@ class MyBoxController extends Controller{
                 $resultArray[$result[$i]->getTagList()]=$result[$i]->getUrl();
         return $resultArray;
      }
+
+     public function deleteItem(){
+         $em = $this->getDoctrine()->getManager();
+     }
 }

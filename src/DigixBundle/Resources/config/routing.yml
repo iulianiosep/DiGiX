@@ -18,10 +18,6 @@ account_reg_check:
     path:     /registercheck
     defaults: { _controller: DigixBundle:Register:register }
 
-second_default_controller:
-    path:     /def2
-    defaults: { _controller: DigixBundle:SecondTest:index }
-
 facebook_login_controller:
     path:     /facebook-login
     defaults: { _controller: DigixBundle:Facebook:index }
@@ -38,9 +34,9 @@ flickr_login_controller:
     path:     /flickr-login
     defaults: { _controller: DigixBundle:Flickr:index }
 
-message_controller:
-    path:     /message
-    defaults: { _controller: DigixBundle:Message:index }
+youtube_login_controller:
+    path:     /youtube-login
+    defaults: { _controller: DigixBundle:Youtube:index }
 
 display_modal_controller:
     path:     /modal

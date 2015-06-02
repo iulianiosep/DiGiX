@@ -355,11 +355,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'DigixBundle\\Controller\\RegisterController::registerAction',  '_route' => 'account_reg_check',);
         }
 
-        // second_default_controller
-        if ($pathinfo === '/def2') {
-            return array (  '_controller' => 'DigixBundle\\Controller\\SecondTestController::indexAction',  '_route' => 'second_default_controller',);
-        }
-
         // facebook_login_controller
         if ($pathinfo === '/facebook-login') {
             return array (  '_controller' => 'DigixBundle\\Controller\\FacebookController::indexAction',  '_route' => 'facebook_login_controller',);
@@ -380,17 +375,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'DigixBundle\\Controller\\FlickrController::indexAction',  '_route' => 'flickr_login_controller',);
         }
 
-        if (0 === strpos($pathinfo, '/m')) {
-            // message_controller
-            if ($pathinfo === '/message') {
-                return array (  '_controller' => 'DigixBundle\\Controller\\MessageController::indexAction',  '_route' => 'message_controller',);
-            }
+        // youtube_login_controller
+        if ($pathinfo === '/youtube-login') {
+            return array (  '_controller' => 'DigixBundle\\Controller\\YoutubeController::indexAction',  '_route' => 'youtube_login_controller',);
+        }
 
-            // display_modal_controller
-            if ($pathinfo === '/modal') {
-                return array (  '_controller' => 'DigixBundle\\Controller\\WallController::displayModalAction',  '_route' => 'display_modal_controller',);
-            }
-
+        // display_modal_controller
+        if ($pathinfo === '/modal') {
+            return array (  '_controller' => 'DigixBundle\\Controller\\WallController::displayModalAction',  '_route' => 'display_modal_controller',);
         }
 
         // tag_controller
